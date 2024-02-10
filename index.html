@@ -1,0 +1,316 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>선문대학교 교통종합정보</title>
+    <!--네이버 서치어드바이저-->
+    <meta name="NaverBot" content="All"/>
+<meta name="NaverBot" content="index,follow"/>
+<meta name="Yeti" content="All"/>
+<meta name="Yeti" content="index,follow"/>
+    <!--pwa-->
+    <link rel="manifest" href="/manifest.json" />
+    <!--pwa 부가-->
+    <link rel="apple-touch-icon" href="./images/152.png" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="apple-mobile-web-app-title" content="선문 교통종합" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+<meta name="description" content="선문 교통종합" />
+<meta name="theme-color" content="#35b5a4" />
+  <!--pwa 부가 끝-->
+    <link rel="canonical" href="https://smbus.o-r.kr/index.html">
+    <meta name="description" content="선문대학교 셔틀버스 시간표,고속버스 예매,시외버스 예매,콜밴 번호,가격을 알려주는 사이트">
+    <meta property="og:type" content="website"> 
+<meta property="og:title" content="선문대학교 버스, 콜밴">
+<meta property="og:description" content="선문대학교 셔틀버스 시간표,고속버스 예매,시외버스 예매,콜밴 번호,가격을 알려주는 사이트">
+<meta property="og:image" content="./images/back.png">
+<meta property="og:url" content="https://smbus.o-r.kr">
+		<meta charset="utf-8" />
+    <meta name="google-site-verification" content="tfMHu3YZlwCjdQhZ-TqnmJU2quUKxq53L0t8pkwpy34" />
+    <meta name="naver-site-verification" content="3de0c00ed9195e44994ea1374d5e131570a29d42" />
+    <meta name="naver-site-verification" content="df3c51058318ccec4e7a2d095b89efd36f028f6f" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, maximum-scale=1.0" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+    <link type="text/css" rel="stylesheet" media="screen" href="flo.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <link rel="icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7232004377090706"
+     crossorigin="anonymous"></script>
+	</head>
+	<body class="is-preload" oncontextmenu="return false" onselectstart="return false" ondragstart="return false" onload="toast('현재날씨가 업데이트 되었어요!')">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+        <div id="toast"></div>
+        <div id="toast2"></div>
+        <div id="toast3"></div>
+        
+				<!-- Header -->
+					<header id="header">
+						<div class="logo">
+							<span style="font-size:40px" ><img src="images/sunmoon.png" alt="선문" width="55px" height="55px" style="display: block; margin: 0.3em auto; pointer-events : none;"></span>
+						</div>
+						<div class="content">
+							<div class="inner">
+								<h1 style="margin-bottom: 3px;">선문대학교<br>교통종합정보</h1>
+								<!--<p style="margin-bottom: 0px;">2020년 2학기</p>-->
+               <!-- <p>'2021. 03. 02 ~ 2021. 06. 16'</p> -->
+                <p style="margin-bottom: 3px;" id="today"></p>
+                <p style="margin-bottom: 3px;" class="js-weather2">내 위치 확인 권한을 수락하여 현재 지역의 날씨 및 기온을 알아보세요!</p>
+                <p style="margin-bottom: 3px;" class="js-weather"></p>
+                <p class="js-weather3 blinking3" style="font-size:15px"></p>
+								<!-- <p style="margin-bottom: 3px;"><a href="https://lily.sunmoon.ac.kr/Page/About/About08_04_02_01_01_01.aspx" target="_blank">선문대 셔틀 공식 사이트 바로가기 🏫</a></p> -->
+                <!--
+                <p style="margin-bottom: 3px;"><a href="https://lily.sunmoon.ac.kr/Page/Story/Notice.aspx" target="_blank">선문대 공지사항 바로가기 📰</a></p>
+                <p><a href="https://lily.sunmoon.ac.kr/Page/Story/VirusNotice.aspx" target="_blank">선문대 코로나19 공식 사이트 바로가기 😷</a></p>
+                -->
+							</div>
+						</div>
+						<nav>
+							<ul>
+                <!--<li><a href="#weekday">평일 📝</a></li>-->
+								<!--<li><a href="#weekend">주말 및 공휴일 🏖</a></li>-->
+								<li><a href="https://lily.sunmoon.ac.kr/Page2/About/About08_04_02_01_01_01.aspx" style="background-color:rgb(0, 0, 0,0.5); " target="_blank">셔틀버스 🚌</a></li>
+							<!--	<li><a href="#weekend" style="background-color:rgb(0, 0, 0,0.5); ">셔틀(휴일) 🏖️</a></li> -->
+                 <li ><a onclick="javascript:btn()" href="http://smu.busro.net/rsvc/" target="_blank" style="background-color:rgb(189, 191, 33,0.5); ">통학버스 🚍</a></li>
+                <li><a href="#soon" style="background-color:rgb(162, 219, 181,0.5); ">시내버스 🚎</a></li>
+                <li><a href="#call" style="background-color:rgb(255, 165, 116,0.5); " onclick="toast2('2021/7/3 기준 가격이에요.')">콜밴 🚐</a></li>
+                <li ><a onclick="javascript:bu()" href="https://www.kobus.co.kr/main.do" target="_blank" style="background-color:rgb(222, 69, 69,0.5); ">고속,시외버스 🚎</a></li>
+			          <li><a href="#where" style="background-color:rgb(163, 206, 255,0.5); " onclick="toast3('평일 15시 이전엔 학생회관 앞에서도 탑승가능!')">셔틀장 위치 🚏</a></li>
+								<!--<li><a href="#elements">Elements</a></li>-->
+							</ul>
+						</nav>
+
+					</header>
+				<!-- Main -->
+					<div id="main">
+						
+							<article id="weekday">
+                
+								<h2 class="major">셔틀버스 평일 시간표 📅</h2>
+									<a href="bus.html" onclick="window.open(this.href, '_blank', 'toolbars=no,scrollbars=no'); return false;"><span class="image main" ><img src="images/pung.jpg" alt="평일 시간표" style="pointer-events : none;"/><br><h5 class="blinking" align="center">확대하려면 사진을 터치! 🔍</h5></span></a>
+							</article>
+
+							<article id="weekend">
+								<h2 class="major">셔틀버스 휴일 시간표📆</h2>
+									<a href="joo.html" onclick="window.open(this.href, '_blank', 'toolbars=no,scrollbars=no'); return false;"><span class="image main" ><img src="images/joo.jpg" alt="주말 시간표" style="pointer-events : none;"/><br><h5 class="blinking" align="center">확대하려면 사진을 터치! 🔍</h5></span></a>
+							</article>
+
+              <article id="soon">
+                <h3 class="major">아산역 가는 시내버스 🚌</h3>
+                <h5 align="center">"순환5는 잘 아실거고, 777번 버스의 경우<br>솔루나라는 선문대 동문쪽으로 가셔야합니다."</h5>
+                <div style=" float: right;position: relative; left: -50%;">
+                <h5 align="center" style="font-size:10px; float: left; position: relative; left: 50%;"><a class="turquoise" href="https://m.map.naver.com/bus/station.nhn?stationID=367323#/map" onclick="window.open(this.href, '_blank', 'toolbars=no,scrollbars=no'); return false;"><img src="images/naver.png" alt="navermap" width="40" height="40" align="center"><br>&emsp;순환5 지도보기<span class="material-icons" style="font-size:16px">
+location_on
+</span></a></h5>
+
+<h5 align="center" style="font-size:10px; float: left; position: relative; left: 50%; padding-left: 20px;"><a class="turquoise" href="https://m.map.naver.com/bus/station.nhn?stationID=372552#/map" onclick="window.open(this.href, '_blank', 'toolbars=no,scrollbars=no'); return false;"><img src="images/naver.png" alt="navermap" width="40" height="40" align="center"><br>&emsp;777버스 지도보기<span class="material-icons" style="font-size:16px">
+location_on
+</span></a></h5></div>
+<br><br><br>
+<hr><br>
+<h3 class="major">천안역, 천안터미널 가는 시내버스 🚌</h3>
+<h5 align="center">"선문대 서문쪽에 있으며 <span style="color:red">970번</span>과 <span style="color:red">971번</span> 버스만 가니깐 다른버스를 타지않게 주의해주세요!"</h5>
+<h5 align="center" style="font-size:10px;"><a class="turquoise" href="https://m.map.naver.com/bus/station.nhn?stationID=351637#/map" onclick="window.open(this.href, '_blank', 'toolbars=no,scrollbars=no'); return false;"><img src="images/naver.png" alt="navermap" width="40" height="40" align="center"><br>970번 버스,971번 버스 <br>&emsp;지도보기<span class="material-icons" style="font-size:16px">
+location_on
+</span></a></h5>
+<hr><br>
+								<h2 class="major">순환5 시간표 📄</h2>
+									<a href="soon5.html" onclick="window.open(this.href, '_blank', 'toolbars=no,scrollbars=no'); return false;"><span class="image main" style="margin-top: 0px;"><img src="images/soon5.jpg" alt="순환5 시간표" style="pointer-events : none;"/><br><h5 class="blinking" align="center">확대하려면 사진을 터치! 🔍</h5></span></a>
+							</article>
+
+              <article id="call">
+								<h2 class="major">콜밴 정보 및 번호 🚐</h2>
+								<h3 align="center">📞 천안 콜밴 1 : <a class="turquoise" href="tel:041-564-7777">041-564-7777 <span class="material-icons" style="font-size:16px">
+phone_forwarded
+</span>&emsp;</a><br><br>
+📞 천안 콜밴 2 : <a class="turquoise" href="tel:041-567-3322">041-567-3322 <span class="material-icons" style="font-size:16px">
+phone_forwarded
+</span>&emsp;</a><br><br>
+                📞 에이스 콜밴 : <a class="turquoise" href="tel:041-584-7000">041-584-7000 <span class="material-icons" style="font-size:16px">
+phone_forwarded
+</span></a>
+<hr><br>
+<h2 class="major">같이타고 가자! 🙋‍♂️</h2>
+
+<h3 align="center" style="font-size:12px"><a href="https://everytime.kr/509916" target="_blank"><img src="images/nav.png" alt="kakao" width="50" height="50" align="center"><br>콜밴 사람 모으는 에타 입장하기 <span class="material-icons" style="font-size:16px">
+chat
+</span></a></h3><br>
+<p align="center" style="font-size:11px">🤔<sup style="font-size:10px">❓</sup><br>콜밴을 다른 사람과 굳이 같이 타야하나요? <br>🤗<sup style="font-size:10px">❗</sup><br>같은 목적지인 사람끼리 같이 탄 만큼 N빵이 되어 <br> 보다 저렴한 가격에 콜밴을 이용하실 수 있습니다!</p>
+
+
+                <hr><br>
+                <h2 class="major">목적지 및 가격 💵</h2>
+                <h3 align="center">
+         선문대 ↔ 천안아산역<br>4,000원<br>
+<br><br> 선문대 ↔ 펜타포트<br>4,000원<br>
+<br><br> 선문대 ↔ 천안역<br>9,000원<br>
+<br><br> 선문대 ↔ 천안 터미널<br>9,000원<br>
+<br><br> 선문대 ↔ 트라펠리스<br>3,000원<br>
+<br><br> 선문대 동문 ↔ 트라펠리스<br>4,000원<br>
+<br><br> 선문대 ↔ 학교 주변 자취방<br>3,000원<br>
+<br><br> 선문대 ↔ 동문/솔루나<br>3,000원<br>
+<br><br> 선문대 ↔ 캠퍼스 내 이동<br>3,000원<br>
+<br><br> 선문대 ↔ 두정동 롯데마트 이후<br>9,000원<br>
+<br><br> 선문대 ↔ 두정동 롯데마트<br>8,000원<br>
+<br><br> 선문대 ↔ 온양터미널, 역<br>8,000원<br>
+<br><br> 선문대 ↔ 쌍용동 용암마을 사거리 라인<br>5,000원<br>
+<br><br> 선문대 ↔ 충무병원<br>6,000원
+                </h3><hr>
+                <p align="center"> ※ 2021년 7월 3일부로 기준&emsp;&emsp;&nbsp;&nbsp;&nbsp;<br>※ 출처 : 
+                  <a href="https://www.facebook.com/SUNMOONSTUDENTCOUNCIL/posts/1885512241600486" target="_blank">선문대학교 총학생회 <span class="material-icons">
+facebook
+</span></a></p>
+                
+							</article>
+
+              <article id="where">
+								<h2 class="major">셔틀장 위치 및 승차장 위치📍</h2>
+									<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6389.521860597902!2d127.071053!3d36.800282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ad892b5b4bc17%3A0x2a76c466faaff02f!2z7IWU7YuA67KE7IqkIOygleulmOyepQ!5e0!3m2!1sko!2skr!4v1604984975233!5m2!1sko!2skr" width="100%" height="500px" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                  <br><br>
+             <h3 align="center"><a class="turquoise" href="try.html" onclick="window.open(this.href, '_blank', 'toolbars=no,scrollbars=no'); return false;">아산역, 천안역 등에서 타는<br>&emsp;&nbsp;선문대 승차장 보러가기 🚥</a></h3>
+							</article>
+
+              <article id="qna">
+								<h2 align="center">자주 여쭈어보는 질문 🙋‍</h2><hr>
+			
+                <h3>
+         Q1) 셔틀버스의 요금은 얼마에요?<br>A) 1000원입니다!<br>
+<br><br> Q2) 셔틀버스요금 지불은 카드만 되나요?<br>A) 후불교통카드를 지원하는 체크카드는 물론 티머니,캐시비로 지불을 할 수 있습니다! 현금결제는 되지않아요..<br>
+<br><br> Q3) 셔틀버스는 공대 앞에서만 탈수 있나요?<br>A) 15시까지는 학생회관 앞의 정거장에서도 탑승하실 수 있습니다!<br>
+<br><br> Q4) 셔틀버스를 탈 때 학생증 검사를 하나요?<br>A) 아니요! 따로 검사는 하지않고 외부인도 탑승이 가능합니다!<br>
+<br><br> Q5) 셔틀버스가 재시간이 안오네요.. 어떻게 해야하죠..?<br>A) 교통 체증으로 인해 늦어질 수 있습니다. 하지만 선넘을 정도로 오지 않는다면 010-5350-7666 또는 041-530-2152에 문의해보세요.<br>
+<br><br> Q6) 대체휴일에는 어떤 시간표를 봐야하나요?<br>A) 토요일/공휴일을 보시면 됩니다.<br>
+<br><br> Q7) 혹시 개발자분 학번이 어떻게 되시나요?<br>A) <span class="text_blurno">15학번</span>입니다.<br>
+
+                </h3><hr stlye="margin-top: 1.0rem; margin-bottom: 1.0rem;">
+                <p align="center"> ※ 학우분들을 위해 더 추가할 QnA와 꿀팁이 있으시다면 에브리타임 댓글이나 피드백 게시판에 작성해주세요!</p>
+							</article>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer" style="background-color: #00000087; border-radius: 25px;">
+            <h9 class="blinking2" style="position:fixed; top : 10px; left:10px; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; font-size:20px;"> 
+              <a href="#qna" style="border-bottom: none;">🤔<sup>❔</sup></a></h9>
+              <p class="js-weather4 fadeout"></p>
+            <p class="copyright" style="color:#ffb5c0; margin-bottom: 3px;"><a href="https://summoonfeed.glideapp.io/" target="_blank">피드백 및 건의사항 작성하기 📢</a></p>
+            <p class="copyright">Photo by <a href="https://twitter.com/sunmoonpr" target="_blank">sunmoonuniversity📷</a></p>
+						<p class="copyright">Powered by KGJ😊</p>
+					</footer>
+			</div>
+
+		<!-- 배경사진 -->
+			<div id="bg"></div>
+    <!--
+       <div id="petalCanvas" style="position:fixed;top:0;z-index:999;height:0;overflow:visible;">  
+<span style="position:absolute;">*</span>  
+<span style="position:absolute;">*</span>  
+<span style="position:absolute;">*</span>  
+<span style="position:absolute;">*</span>  
+<span style="position:absolute;">*</span>  
+<span style="position:absolute;">*</span>  
+<span style="position:absolute;">*</span>  
+<span style="position:absolute;">*</span>  
+<span style="position:absolute;">*</span>  
+<span style="position:absolute;">*</span>  
+<span style="position:absolute;">*</span>  
+<span style="position:absolute;">*</span>  
+<span style="position:absolute;">*</span>  
+<span style="position:absolute;">*</span>  
+<span style="position:absolute;">*</span>  
+<span style="position:absolute;">*</span>  
+<span style="position:absolute;">*</span>  
+<span style="position:absolute;">*</span>  
+<span style="position:absolute;">*</span>  
+<span style="position:absolute;">*</span>  
+<span style="position:absolute;">*</span>  
+<span style="position:absolute;">*</span>  
+<span style="position:absolute;">*</span>  
+<span style="position:absolute;">*</span>  
+<span style="position:absolute;">*</span>  
+<span style="position:absolute;">*</span>  
+       </div>
+    -->
+		<Scripts>
+     <!-- <script type="text/javascript">
+      alert('그동안 선문대학교 교통종합정보를 이용해주셔서 감사했습니다..\n해당 사이트는 2022년 05월 05일로부터 종료됩니다.');
+      </script>-->
+			<script src="assets/js/jquery.min.js"></script>
+      <script type="text/javascript">
+
+		$(document).ready(function(){
+
+			$(document).bind('keydown',function(e){
+
+				if ( e.keyCode == 123 /* F12 */) {
+
+					e.preventDefault();
+
+					e.returnValue = false;
+
+				}
+
+			});
+
+		});
+
+	</script>
+
+
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+      <script src="weather.js"></script>
+      <script src="flo.js"></script>
+<!--<script>
+    // domReady
+    $(function() {
+        $('body').sakura();
+    });
+
+    // windowLoad
+    $(window).load(function() {
+        $('body').sakura();
+    });
+</script>-->
+      <script type="text/javascript">
+        if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+        navigator.serviceWorker.register("/service-worker.js");
+    });
+}
+    </script>
+    <script type="text/javascript">
+function printTime() {
+
+              var today = document.getElementById("today");            // 출력할 장소 선택
+
+              var now = new Date();                                                  // 현재시간
+
+              var week = new Array('일', '월', '화', '수', '목', '금', '토');
+
+              var nowTime = now.getFullYear() + "년 " + (now.getMonth()+1) + "월 " + now.getDate() + "일 " + week[now.getDay()] +"요일";
+
+              today.innerHTML = nowTime;           // 현재시간을 출력
+
+}
+              printTime();
+
+
+
+
+    </script>
+
+      <script id="snowAnimate">
+var flakeCnt;var delta_x=new Array(),delta_y=new Array();var move_x=new Array(),move_y=new Array();var resolution_x,resolution_y;$(function(){resolution_x=document.documentElement.clientWidth,resolution_y=document.documentElement.clientHeight;var position_x,position_y,i=0;flakeCnt=document.getElementById('petalCanvas').getElementsByTagName('span').length;$("#petalCanvas span").each(function(){position_x=Math.random()*resolution_x;position_y=-30-(Math.random()*100);$(this).css({"left":position_x+"px","top":position_y+"px"});$(this).attr("id","drop"+i);move_x[i]=position_x;move_y[i]=position_y;i++;});petalSet();});function petalSet(){var hei,speed;if(resolution_y<600){hei=600;}else{hei=resolution_y;}var max_angle=hei/2;for(var i=0;i<flakeCnt;i++){speed=Math.random();delta_x[i]=(speed*max_angle)/1200+i/100;delta_y[i]=(speed*0.4)+0.3;}petalDrop();}function petalDrop(){for(var i=0;i<flakeCnt;i++){move_x[i]-=delta_x[i];move_y[i]+=delta_y[i];if(move_x[i]<0)move_x[i]=resolution_x;if(move_y[i]>resolution_y-10)move_y[i]=-20;$("#drop"+i).css({"left":move_x[i]+"px","top":move_y[i]+"px"});}setTimeout("petalDrop()",1);}  
+</script>
+
+   
+    
+	</body>
+</html>
