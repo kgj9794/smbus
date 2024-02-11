@@ -87,7 +87,7 @@ weather3.innerText=`⛄ 지금 밖에 눈와요! >.< ❄`
 weather2.innerText=`현재날씨는 [폭설 🌨] 이며,`
 weather3.innerText=`⛄ 지금 밖에 눈와요! >.< ❄`
 }
-else if (place=='mist' || place=='fog' || place=='Haze'){
+else if (place=='mist' || place=='fog' || place=='haze'){
 weather2.innerText=`현재날씨는 [안개 🌫] 이며,`
 }
 else if (place=='squalls' || place=='tornado'){
